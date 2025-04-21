@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/features/home/view/signup/Signup_view.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -33,8 +34,8 @@ class _LoginState extends State<Login> {
             child: Center(
               child: Image.asset(
                 'assets/images/Logo_main.png',
-                width: 170,
-                height: 113,
+                width: 200,
+                height: 150,
               ),
             ),
           ),
@@ -142,7 +143,12 @@ class _LoginState extends State<Login> {
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          // Xử lý sự kiện khi nút được nhấn
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignupView(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(319, 60),

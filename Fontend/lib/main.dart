@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:dating_app/features/home/view/Login/Login.dart';
+import 'package:dating_app/features/home/view/Login/Login_view.dart';
 import 'package:dating_app/screen/splash/splash_screen.dart';
 void main() {
   runApp(const MyApp());
