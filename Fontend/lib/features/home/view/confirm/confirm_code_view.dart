@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import '/features/home/view/login/Login_view.dart';
 import '/features/home/component/Logo_compo.dart';
-import '/features/home/view/confirm/confirm_code_view.dart';
+import '/features/home/view/signup/Signup_view.dart';
 
-class SignupView extends StatefulWidget {
-  const SignupView({super.key});
+class ConfirmCodeView extends StatefulWidget {
+  const ConfirmCodeView({super.key});
 
   @override
-  State<SignupView> createState() => _SignupViewState();
+  State<ConfirmCodeView> createState() => _ConfirmCodeViewState();
 }
 
-class _SignupViewState extends State<SignupView> {
+class _ConfirmCodeViewState extends State<ConfirmCodeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +34,7 @@ class _SignupViewState extends State<SignupView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const Text(
-                      'Sign Up',
+                      'Enter Code',
                       style: TextStyle(
                         fontSize: 35.0,
                         fontWeight: FontWeight.bold,
@@ -44,19 +43,36 @@ class _SignupViewState extends State<SignupView> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Your Number Phone',
+                      'We have sent a code to your phone number',
                       style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
                     const SizedBox(height: 20),
-                    TextField(
-                      keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
-                        labelText: 'Number Phone',
-                        labelStyle: const TextStyle(color: Colors.black87),
-                        border: UnderlineInputBorder(),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        for (int i = 0; i < 4; i++)
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.blue.shade200,
+                            ),
+                            alignment: Alignment.center,
+                            child: TextField(
+                              maxLength: 1,
+                              textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
+                              style: TextStyle(fontSize: 24),
+                              decoration: InputDecoration(
+                                counterText: '',
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                      ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 40),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -65,12 +81,12 @@ class _SignupViewState extends State<SignupView> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Login(),
+                                builder: (context) => SignupView(),
                               ),
                             );
                           },
                           style: TextButton.styleFrom(
-                            backgroundColor: Colors.blue.shade500,
+                            backgroundColor: Color(0xff9C9C9C).withAlpha(70),
                             minimumSize: const Size(60, 60),
                             padding: const EdgeInsets.symmetric(
                               vertical: 15,
@@ -88,14 +104,7 @@ class _SignupViewState extends State<SignupView> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const ConfirmCodeView(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(280, 60),
                             backgroundColor: Colors.blue.shade500,
@@ -105,13 +114,12 @@ class _SignupViewState extends State<SignupView> {
                           ),
 
                           child: const Text(
-                            'Next',
+                            'SIGN UP',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                       ],
                     ),
-                  
                   ],
                 ),
               ),

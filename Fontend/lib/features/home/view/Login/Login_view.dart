@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/features/home/view/signup/Signup_view.dart';
+import '/features/home/component/Logo_compo.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -15,30 +16,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.blue.shade500,
-                  Colors.purple.shade500,
-                ], // Tùy chỉnh màu nền gradient
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 150,
-            left: 20,
-            right: 20,
-            child: Center(
-              child: Image.asset(
-                'assets/images/Logo_main.png',
-                width: 200,
-                height: 150,
-              ),
-            ),
-          ),
+          LogoCompo(),
           Positioned(
             bottom: -15,
             left: 0,
