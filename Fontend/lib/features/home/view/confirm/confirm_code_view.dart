@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/features/home/component/Logo_compo.dart';
 import '/features/home/view/signup/Signup_view.dart';
+import '/features/home/view/interest/interest_view.dart';
 
 class ConfirmCodeView extends StatefulWidget {
   const ConfirmCodeView({super.key});
@@ -104,7 +105,14 @@ class _ConfirmCodeViewState extends State<ConfirmCodeView> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InterestView(),
+                              ),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(280, 60),
                             backgroundColor: Colors.blue.shade500,
